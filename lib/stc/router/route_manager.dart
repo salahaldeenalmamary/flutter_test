@@ -5,7 +5,7 @@ import '../pages/coffee_detail_screen.dart';
 import '../pages/delivery_screen.dart';
 import '../pages/home/home_screen.dart';
 import '../pages/onboarding_screen.dart';
-import '../pages/order_screen.dart';
+import '../pages/order/order_screen.dart';
 
 class RouteManager {
   static const String onboardingRoute = '/';

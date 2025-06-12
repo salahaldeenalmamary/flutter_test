@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:webapp/stc/core/extensions/navigation_extension.dart';
-import 'package:webapp/stc/pages/order_screen.dart';
+import 'package:webapp/stc/pages/order/order_screen.dart';
 
 import '../models/coffee_model.dart';
 import '../router/route_manager.dart';
