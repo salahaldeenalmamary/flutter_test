@@ -1,9 +1,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:webapp/stc/core/extensions/navigation_extension.dart';
+import 'package:webapp/stc/pages/order_screen.dart';
 
 import '../models/coffee_model.dart';
+import '../router/route_manager.dart';
 import '../theme/app_styles.dart'; 
+
+
 
 class CoffeeDetailScreen extends HookWidget {
   final Coffee coffee;
@@ -49,7 +54,7 @@ class CoffeeDetailScreen extends HookWidget {
           Gap.h24, 
         ],
       ),
-      bottomNavigationBar: _BottomBuyBar(price: coffee.price),
+      bottomNavigationBar: _BottomBuyBar(price: coffee.price, orderItem: coffee,),
     );
   }
 }
@@ -259,7 +264,8 @@ class _SizeSelectionSection extends StatelessWidget {
 
 class _BottomBuyBar extends StatelessWidget {
   final double price;
-  const _BottomBuyBar({required this.price});
+  final Coffee orderItem;
+  const _BottomBuyBar({required this.price,required this.orderItem});
 
   @override
   Widget build(BuildContext context) {
@@ -292,7 +298,9 @@ class _BottomBuyBar extends StatelessWidget {
           Expanded(
             child: ElevatedButton(
               onPressed: () {
-                
+                  context.pushNamed(RouteManager.orderRoute,
+                 arguments: orderItem);
+                  
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: ColorTheme.primary,

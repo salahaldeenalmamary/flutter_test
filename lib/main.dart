@@ -3,7 +3,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 
-import 'stc/pages/home_screen.dart';
+import 'stc/pages/home/home_screen.dart';
+import 'stc/router/route_manager.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,6 +27,8 @@ class MyApp extends StatelessWidget {
             PointerDeviceKind.unknown,
           },
         ),
+         initialRoute: RouteManager.onboardingRoute,
+      onGenerateRoute: RouteManager.generateRoute,
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
@@ -51,7 +54,8 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const HomeScreen(),
+
+    
     );
   }
 }
