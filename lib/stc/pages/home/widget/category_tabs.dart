@@ -16,7 +16,7 @@ class CategoryTabs extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       padding: const EdgeInsets.only(
-          top: 10, left: AppPaddings.screen),
+          top: 10, left: AppPaddings.screen, bottom: 5),
       child: Row(
         children: categories.map((category) {
           final isSelected = category == selectedCategory;

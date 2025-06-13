@@ -53,7 +53,7 @@ class CoffeeCard extends StatelessWidget {
                 ),
                 Positioned(
                   top: 8,
-                  left: 8,
+                  right: 8,
                   child: Container(
                     padding:
                         const EdgeInsets.symmetric(horizontal: 6, vertical: 2),

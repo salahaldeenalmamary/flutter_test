@@ -70,8 +70,7 @@ class _MapView extends StatelessWidget {
                       blurRadius: 6,
                       offset: Offset(0, 2))
                 ]),
-            child: const Icon(Icons.delivery_dining,
-                color: ColorTheme.primary, size: 24),
+            child:  Image.asset(ImageConstants.mask_Group, height: 24, width: 24,),
           ),
         ),
       ],
@@ -226,9 +225,7 @@ class _OrderInfoCard extends StatelessWidget {
               color: ColorTheme.primary.withOpacity(0.15),
               borderRadius: BorderRadius.circular(16),
             ),
-            child: Icon(Icons.delivery_dining,
-                color: ColorTheme.primary, size: 32),
-          ),
+            child:Image.asset(ImageConstants.mask_Group, ) ),
           Gap.w12,
           Expanded(
             child: Column(

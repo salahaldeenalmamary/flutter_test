@@ -47,7 +47,16 @@ class _SplitColorBannerContainer extends StatelessWidget {
       child: Stack(
         children: [
           Column(children: [
-            Expanded(child: Container(color: ColorTheme.darkBackground)),
+            Expanded(
+                child: Container(
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Color(0xFF131313), Color(0xFF313131)],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+              ),
+            )),
             Expanded(child: Container(color: Colors.white)),
           ]),
           Positioned.fill(child: child),

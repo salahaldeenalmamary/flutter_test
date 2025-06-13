@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:webapp/stc/util/image.dart';
 import '../../../models/delivery_details.dart';
 import '../../../theme/app_styles.dart';
 
@@ -34,10 +35,10 @@ class DeliveryAddressSection extends HookWidget {
     }, [initialDetails]);
 
     Widget _buildActionButton(
-        String label, IconData icon, VoidCallback? onPressed) {
+        String label,   String name, VoidCallback? onPressed) {
       return OutlinedButton.icon(
         onPressed: onPressed,
-        icon: Icon(icon, size: 18, color: ColorTheme.textPrimary),
+        icon:Image.asset(name),
         label: Text(label,
             style: FontTheme.subtitle.copyWith(color: ColorTheme.textPrimary)),
         style: OutlinedButton.styleFrom(
@@ -90,20 +91,23 @@ class DeliveryAddressSection extends HookWidget {
               initialDetails.note!.isNotEmpty) ...[
             Gap.h8,
             Text('Note:',
-                style: FontTheme.body.copyWith(fontWeight: FontTheme.body.fontWeight)),
+                style: FontTheme.body
+                    .copyWith(fontWeight: FontTheme.body.fontWeight)),
             Gap.h4,
             Text(initialDetails.note!, style: FontTheme.subtitle),
           ],
           Gap.h12,
           Row(
             children: [
-              _buildActionButton('Edit Address', Icons.edit_square, () {
+              _buildActionButton('Edit Address', ImageConstants.Edit, () {
                 editType.value = EditType.address;
               }),
               Gap.w12,
               _buildActionButton(
-                initialDetails.note?.isNotEmpty == true ? 'Edit Note' : 'Add Note',
-                Icons.sticky_note_2_outlined,
+                initialDetails.note?.isNotEmpty == true
+                    ? 'Edit Note'
+                    : 'Add Note',
+                ImageConstants.Note,
                 () => editType.value = EditType.note,
               ),
             ],

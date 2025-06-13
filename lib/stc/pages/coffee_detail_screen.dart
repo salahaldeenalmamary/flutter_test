@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:webapp/stc/core/extensions/navigation_extension.dart';
 import 'package:webapp/stc/pages/order/order_screen.dart';
+import 'package:webapp/stc/util/image.dart';
 
 import '../models/coffee_model.dart';
 import '../router/route_manager.dart';
@@ -153,7 +154,7 @@ class _CoffeeInfoSection extends StatelessWidget {
             Gap.w4,
             Text('(230)', style: FontTheme.subtitle.copyWith(fontSize: 13)), 
             const Spacer(),
-            _buildInfoIcon(Icons.delivery_dining_outlined), 
+            Image.asset(ImageConstants.mask_Group),
             Gap.w12,
             _buildInfoIcon(Icons.coffee_outlined), 
             Gap.w12,

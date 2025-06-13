@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:webapp/stc/util/image.dart';
 import '../../../theme/app_styles.dart';
 class DiscountSection extends StatelessWidget {
   const DiscountSection();
@@ -19,8 +20,7 @@ class DiscountSection extends StatelessWidget {
           ),
           child: Row(
             children: [
-              const Icon(Icons.sell_outlined,
-                  color: ColorTheme.primary), // Placeholder discount icon
+               Image.asset(ImageConstants.discount_icon, color: ColorTheme.primary,),
               Gap.w12,
               Expanded(
                 child: Text(
