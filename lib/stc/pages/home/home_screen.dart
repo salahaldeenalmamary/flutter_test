@@ -67,11 +67,12 @@ class HomeScreen extends HookWidget {
         SliverPersistentHeader(
           delegate: SliverHomeHeaderDelegate(
             searchController: searchController,
+
             topPadding: MediaQuery.of(context).padding.top,
           ),
           pinned: true,
         ),
-          const SliverToBoxAdapter(child: PromoBanner()),
+           const SliverToBoxAdapter(child: PromoBanner(),),
           SliverPersistentHeader(
             pinned: true,
             

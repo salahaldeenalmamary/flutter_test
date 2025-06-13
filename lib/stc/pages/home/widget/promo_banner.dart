@@ -7,7 +7,8 @@ class PromoBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return _SplitColorBannerContainer(
+        child: Padding(
       padding: const EdgeInsets.fromLTRB(
           AppPaddings.screen, 24, AppPaddings.screen, 0),
       child: ClipRRect(
@@ -26,9 +27,31 @@ class PromoBanner extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-          
           ],
         ),
+      ),
+    ));
+  }
+}
+
+class _SplitColorBannerContainer extends StatelessWidget {
+  final Widget child;
+  const _SplitColorBannerContainer({required this.child});
+
+  final double _height = 150.0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: _height,
+      child: Stack(
+        children: [
+          Column(children: [
+            Expanded(child: Container(color: ColorTheme.darkBackground)),
+            Expanded(child: Container(color: Colors.white)),
+          ]),
+          Positioned.fill(child: child),
+        ],
       ),
     );
   }
