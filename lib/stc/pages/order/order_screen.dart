@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:webapp/stc/core/extensions/navigation_extension.dart';
+import '../../models/delivery_details.dart';
 import './widget/bottom_order_bar.dart';
 import './widget/delivery_address_section.dart';
 import './widget/delivery_toggle.dart';
@@ -20,7 +21,11 @@ class OrderScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final order = useState(Order(item: orderItem));
-
+ final deliveryDetails = useState(DeliveryDetails(
+      street: 'Jl. Kpg Sutoyo',
+      details: 'Kpg. Sutoyo No. 620, Bilzen, Tanjungbalai.',
+      note: null,
+    ));
     return Scaffold(
       backgroundColor: ColorTheme.background,
       appBar: OrderAppBar(),
@@ -36,7 +41,11 @@ class OrderScreen extends HookWidget {
           ),
           Gap.h24,
           if (order.value.isDeliver) ...[
-            DeliveryAddressSection(),
+            DeliveryAddressSection(  initialDetails: deliveryDetails.value, 
+                onSave: (updatedDetails) {
+                 
+                  deliveryDetails.value = updatedDetails;
+                },),
             Gap.h24,
           ],
           OrderItem(

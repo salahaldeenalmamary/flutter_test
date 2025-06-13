@@ -93,7 +93,9 @@ class _MapButton extends StatelessWidget {
       ),
       child: IconButton(
         icon: Icon(icon, color: ColorTheme.textPrimary, size: 20),
-        onPressed: () {context.pop();},
+        onPressed: () {
+          context.pop();
+        },
       ),
     );
   }
@@ -270,16 +272,11 @@ class _CourierInfoSection extends StatelessWidget {
           ),
         ),
         Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: ColorTheme.grey, width: 1.5),
-          ),
-          child: IconButton(
-            icon:
-                const Icon(Icons.phone_outlined, color: ColorTheme.textPrimary),
-            onPressed: () {},
-          ),
-        ),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: ColorTheme.grey, width: 1.5),
+            ),
+            child: Image.asset(ImageConstants.call)),
       ],
     );
   }
