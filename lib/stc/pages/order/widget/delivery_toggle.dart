@@ -23,9 +23,9 @@ class DeliveryToggle extends StatelessWidget {
         width: buttonWidth,
         padding: const EdgeInsets.symmetric(vertical: 14),
         decoration: BoxDecoration(
-            color: isSelected ? ColorTheme.primary : ColorTheme.cardBackground,
+            color: isSelected ? ColorTheme.primary : ColorTheme.grey.withOpacity(0.5),
             borderRadius: BorderRadius.circular(12),
-            border: isSelected ? null : Border.all(color: ColorTheme.grey)),
+           border: null),
         child: Text(
           text,
           textAlign: TextAlign.center,

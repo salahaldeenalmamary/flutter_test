@@ -30,13 +30,8 @@ class OrderScreen extends HookWidget {
           DeliveryToggle(
             selectedOption: order.value.deliveryOption,
             onOptionSelected: (option) {
-              order.value = Order(
-                item: order.value.item,
-                quantity: order.value.quantity,
-                deliveryOption: option,
-                deliveryFee: order.value.deliveryFee,
-                discount: order.value.discount,
-              );
+             order.value = order.value.copyWith(deliveryOption: option);
+
             },
           ),
           Gap.h24,
@@ -49,13 +44,8 @@ class OrderScreen extends HookWidget {
             quantity: order.value.quantity,
             onQuantityChanged: (newQuantity) {
               if (newQuantity >= 1) {
-                order.value = Order(
-                  item: order.value.item,
-                  quantity: newQuantity,
-                  deliveryOption: order.value.deliveryOption,
-                  deliveryFee: order.value.deliveryFee,
-                  discount: order.value.discount,
-                );
+               order.value = order.value.copyWith(quantity: newQuantity);
+
               }
             },
           ),

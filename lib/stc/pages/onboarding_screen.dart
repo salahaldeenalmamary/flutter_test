@@ -46,7 +46,7 @@ class OnboardingScreen extends HookWidget {
         gradient: LinearGradient(
           colors: [
             Colors.transparent,
-            ColorTheme.darkBackground.withOpacity(0.3),
+            ColorTheme.grey.withOpacity(0.1),
             ColorTheme.darkBackground,
           ],
           begin: Alignment.topCenter,

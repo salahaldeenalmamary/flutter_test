@@ -44,7 +44,21 @@ class HomeScreen extends HookWidget {
               rating: 4.7,
               imageUrl:
                   'https://cdn.pixabay.com/photo/2017/09/04/18/39/coffee-2714970_1280.jpg')
-        ]);
+
+       ,  Coffee(
+              name: 'Cappuccino',
+              type: 'Steamed Milk',
+              price: 5.10,
+              rating: 4.9,
+              imageUrl:
+                  'https://cdn.pixabay.com/photo/2017/09/04/18/39/coffee-2714970_1280.jpg'),
+          Coffee(
+              name: 'Latte',
+              type: 'Espresso',
+              price: 4.80,
+              rating: 4.7,
+              imageUrl:
+                  'https://cdn.pixabay.com/photo/2017/09/04/18/39/coffee-2714970_1280.jpg')]);
 
     return Scaffold(
       backgroundColor: ColorTheme.background,
@@ -60,7 +74,7 @@ class HomeScreen extends HookWidget {
           const SliverToBoxAdapter(child: PromoBanner()),
           SliverPersistentHeader(
             pinned: true,
-            floating: true,
+            
             delegate: SliverCategoryHeaderDelegate(
               child: CategoryTabs(
                 categories: categories,
