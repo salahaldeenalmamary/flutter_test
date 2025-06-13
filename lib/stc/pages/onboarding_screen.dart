@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:webapp/stc/core/extensions/context_extensions.dart';
 import 'package:webapp/stc/core/extensions/navigation_extension.dart';
 
 import '../router/route_manager.dart';
@@ -20,7 +21,10 @@ class OnboardingScreen extends HookWidget {
         body: Stack(
           fit: StackFit.expand,
           children: [
-            _buildBackgroundImage(),
+           Positioned(
+            bottom: context.height/3,
+            top: 0,left: 0, right: 0,
+            child: _buildBackgroundImage()) ,
             _buildContentOverlay(context),
           ],
         ),
@@ -31,9 +35,9 @@ class OnboardingScreen extends HookWidget {
   Widget _buildBackgroundImage() {
     return Image.asset(
      ImageConstants.Onboarding,
-      fit: BoxFit.cover,
+      fit: BoxFit.fill,
      
-      color: Colors.white.withOpacity(0.3),
+     
       colorBlendMode: BlendMode.darken,
     );
   }
@@ -46,7 +50,7 @@ class OnboardingScreen extends HookWidget {
         gradient: LinearGradient(
           colors: [
             Colors.transparent,
-            ColorTheme.grey.withOpacity(0.1),
+            ColorTheme.darkBackground.withOpacity(0.1),
             ColorTheme.darkBackground,
           ],
           begin: Alignment.topCenter,
